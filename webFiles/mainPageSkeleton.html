@@ -1,0 +1,384 @@
+<!--
+   nu.html
+   
+   Copyright 2016 Randy <romxero@mac.hsv.local>
+   
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+   
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+   MA 02110-1301, USA.
+   
+   
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>Welcome to SaturdayLove!</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta content='width=device-width, initial-scale=1' name='viewport'/>
+	<meta name="generator" content="Geany 1.24.1" />
+	
+	<style>
+		
+.flex-container {
+    display: -webkit-flex;
+    display: flex;  
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+.flex-container > * {
+    padding: 15px;
+    -webkit-flex: 1 100%;
+    flex: 1 100%;
+}
+	@font-face {
+				font-family: scoreFont;
+				src: url('fonts/retro.ttf');
+				}
+				
+				
+		body 
+		{
+				
+			  background-color: #EBEBEB;
+			  color: #000;
+			  margin: 0;
+			  border: 2px solid #CCC;
+			  padding: 0;
+				background-attachment:fixed;
+
+
+			
+			
+		}
+		
+		footer 
+			{	
+				
+
+				
+	background: #999; /* for non-css3 browsers */
+
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cccccc', endColorstr='#000000'); /* for IE */
+background: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#000)); /* for webkit browsers */
+background: -moz-linear-gradient(top,  #ccc,  #000); /* for firefox 3.6+ */
+
+			  
+			  margin: 0;
+			  border: 0;
+			  padding-top: 100px;
+			  width:100%;
+			  /*width: 100%;*/
+			  /*height: 100%;*/
+			 bottom:auto;
+
+			}
+		
+		header 
+			{	
+				top:0px;				
+				background: #C058C9; /* For browsers that do not support gradients */
+				background: -webkit-linear-gradient(#C489C9, #C058C9); /* For Safari 5.1 to 6.0 */
+				background: -o-linear-gradient(#C489C9, #C058C9); /* For Opera 11.1 to 12.0 */
+				background: -moz-linear-gradient(#C489C9, #C058C9); /* For Firefox 3.6 to 15 */
+				background: linear-gradient(#C489C9, #C058C9); /* Standard syntax */
+				margin: 0px;
+				padding-bottom: 20px;
+				padding-top: 20px;
+				padding-left: 10px;
+				padding-right: 10px;
+				border-style: outset;
+				border-color: #C058C9;
+				border-width: 1.5px;
+				
+				
+				
+			}
+		#rightSpace 
+			{
+				float: right;
+			}
+			
+		#leftSpace 
+			{
+				float: left;
+			}
+			
+
+			
+		#footerContainer 
+			{
+				float: right;
+			}
+			
+	#mainPane 
+			{
+				
+				  
+	
+				
+			}
+			
+	#leftPane 
+		{
+				background-color: #EBEBEB;		  
+				float: left;
+				
+		}
+				
+	#rightPane 
+		{
+				background-color: #EBEBEB;
+				  
+				float: right;
+		
+		}
+				
+    
+	#centerPane
+		{
+				
+				  
+				 margin: 0;
+			  border: 0;
+			  padding-top: 10px;
+		
+		}
+				
+    
+
+	.welcome 
+			{
+				
+				
+				background-color: #FCF3E0;
+				border-radius: 25px;
+				width: 100%;
+				 			  
+			  margin: auto;
+			
+			border: 3px solid #73AD21;
+			padding: 10px;
+			  opacity: .8;
+			  
+			  border: 0;
+	
+			}
+
+	#interactionTable 
+			{
+				
+				
+				background-color: #FCF3E0;
+				border-radius: 25px;
+				width: 100%;
+				 			  
+			  margin: auto;
+			
+			border: 3px solid #73AD21;
+			padding: 10px;
+			  opacity: .8;
+			  
+			  border: 0;
+	
+			}
+    
+	.fbBold 
+			{
+				
+				font-family: 'Freight Sans Bold', helvetica, arial, sans-serif;
+				font-weight: bold !important;
+				font-size: 3em;
+				text-rendering: optimizelegibility;
+			}
+
+		h1
+		{
+					font-family: 'Freight Sans Bold', helvetica, arial, sans-serif;
+					text-rendering: optimizelegibility;
+					color:#FFFFFF;
+					
+					
+		}
+
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+				li {
+					display: inline;
+				}
+				
+			table.fixed { table-layout:fixed; }
+	table.fixed td { overflow: hidden; }
+
+	.increaseImageWidth
+	{
+		width:28px;
+		height:28px;
+	}
+
+	.increaseImageWidth:hover { 
+							background-color: #C489C9;
+							}
+	
+	.tdHeaderSpace
+	{
+		margin: 2px;
+		padding:8px;	
+		border: 0;
+		opacity: .9;
+
+	}
+	
+	
+
+	
+	.scoreBoard
+	{
+			font-family: scoreFont;
+			font-size: 1em;
+			/*color: #B49AB9;*/
+			color:#BB23BB;
+			text-rendering: optimizelegibility;
+			font-weight: bold !important;
+			text-shadow: 2px 2px #B3B3B3;
+			
+			
+	}
+	.regularDisplay
+	{
+			font-family: 'Freight Sans Bold', helvetica, arial, sans-serif;
+			text-rendering: optimizelegibility;
+			font-size: 1.4em;
+			/*color: #B49AB9;*/
+			font-weight: bold !important;
+			color:#FFFFFF;
+			
+			
+	}
+
+	</style>
+	
+</head>
+
+<body>
+	<div class="flex-container">
+	<header>
+
+
+		
+			
+	<div align="left">
+	<h1>Tamu
+<!--
+				<h1 title="LibreDate <3">Tamu</h1>
+-->
+				<img src=" data:image/png;base64,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" alt="A heart" title="You are that special someone =)" onclick="document.getElementById('audioSuccess').play();">
+	</h1>
+	</div>
+	</center>
+	
+	</header>
+	<div class="wrapper">	
+<div class="welcome">
+
+
+				<p class="fbBold">Tamu</p>
+				<div class="left">
+				<article>
+				Tamu is a special dating app.
+				
+				</article>
+				</div>
+				<div class="right">
+				<article>
+				Tamu is a special dating app.
+				
+				</article>
+				</div>
+
+		</div>			
+		<aside id="sidebar">
+    <section id="widget_1">hello</section>
+    <section id="widget_2"></section>
+    <section id="widget_3"></section>
+</aside>
+				<br>
+				
+				<br>
+				<br>
+				<br>
+				<br>
+
+			
+				
+						
+			
+					
+				
+				
+			
+			
+		</center>
+	
+
+
+	
+	
+	
+	
+
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+
+	
+	</div>
+	<footer >
+		<center>
+<img src= "logo.svg" width="400" height="300">
+	</center>
+	
+	 <details>
+  <summary>Copyright 1999-2014.</summary>
+  <p> - by Refsnes Data. All Rights Reserved.</p>
+  <p>All content and graphics on this web site are the property of the company Refsnes Data.</p>
+</details> 
+	</footer>
+</div>
+</body>
+
+</html>
+
+
+ 
