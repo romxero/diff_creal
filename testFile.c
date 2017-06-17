@@ -14,10 +14,13 @@
 //~ #include "zmq.h" // zeromq library 
 //~ #include <omp.h> //openmp
 #include "npth.h" //main threading model used in this application 
+#include <fcntl.h> 
+#include <math.h> 
+#include <pthread.h> 
 
 
 //Static vars
-inline void *ptrMainThread; //for main thread stack
+//~ inline void *ptrMainThread; //for main thread stack
 
 unsigned int mainStack[4]; 
 
@@ -40,8 +43,8 @@ int main(int argc, char **argv)
 	pid = getpid(); //getting the pid of creal	
 	FILE *outputFP = NULL; //this is to actually write the file
 					
-
-
-	return 0; //bsd compat
+					
+					
+	exit(EXIT_SUCCESS);	
 } 
 
