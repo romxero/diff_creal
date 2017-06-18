@@ -19,6 +19,7 @@
 #include <pthread.h> 
 
 
+
 //Static vars
 //~ inline void *ptrMainThread; //for main thread stack
 
@@ -32,19 +33,76 @@ long numOfCores; //getting the number of cores
 
 //function declarations 
 //~ int returnNumberOfCoresOnSystem(void); //this function will return the amount of cores available on the system
-
+static int createThreads(int i,int state); 
 int main(int argc, char **argv)
 {
-	puts("TESTING"); 
+
+	npth_init(); //init threading 
+	
 	numOfCores = sysconf( _SC_NPROCESSORS_ONLN );  //getting number of cpus
 	
 	printf("Number of cores : %d \n",numOfCores); //display core count 
 	
 	pid = getpid(); //getting the pid of creal	
-	FILE *outputFP = NULL; //this is to actually write the file
-					
-					
-					
-	exit(EXIT_SUCCESS);	
+	uint corePids[numOfCores]; //an array for number of cores 
+	int forkReturnVal = 0;
+	uint forkCounter = 0; 
+	puts("main Thread"); 
+	
+		for (forkCounter = 0; forkCounter < numOfCores; forkCounter++) //the main thread counts as one in set so: numOfCores - 1 gives actual numbers to fork
+		{
+			forkReturnVal = fork();// != 0
+			corePids[forkCounter] = forkReturnVal; //adding the values here
+
+			
+		}
+	
+			if (forkReturnVal == 0)
+			{
+					corePids[forkCounter] = forkReturnVal; //adding the values here
+					goto PARENT; 
+			} 
+			else
+			{
+				//~ printf("core : %d \n",getpid()); //display core count 
+				goto END;
+			}
+	
+		PARENT:
+	
+		for (forkCounter = 0; forkCounter < numOfCores; forkCounter++) //the main thread counts as one in set so: numOfCores - 1 gives actual numbers to fork
+		{
+
+				
+						printf("core : %d \n",corePids[forkCounter]); //display core count 
+
+	
+		}
+
+	//~ if (getpid() != pid)
+	//~ {
+						
+						
+		//~ //run the parsing program right here
+	//~ }
+	
+	
+	puts("TESTING"); 				
+END:
+	exit(EXIT_SUCCESS);	//not fully portable
 } 
+
+static int createThreads(int i, int state)
+{
+	if ( i != state)
+	{
+		++i;
+		printf("core : %d \n",i); //display core count 
+	
+		
+	}
+		
+	
+} 
+
 
