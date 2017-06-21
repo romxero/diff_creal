@@ -56,17 +56,34 @@ FILE *mainFile; //main file for writing
 
 /* Sundials attributes */
 N_Vector y = NULL;              /* empty vector for storing solution */
- 
+N_Vector y0 = NULL; //initial values.. I think I need this? 
 /* Function definitions */ 
 static int f(realtype t, N_Vector y, N_Vector ydot, void *user_data); //this is a test right here 
+
+
+typdef long int vectorVar;
+
 int main(int argc, char **argv)
 {
-		puts(" Crea Dyanmic Engine ~ Testing "); 				
+	puts(" Crea Dyanmic Engine ~ Testing "); 				
+	/* threading initialization */ 
 	
+	/*setup stack variables and assign stack or static/global variables */ 
+	  realtype dx, dy, reltol, abstol, t, tout, umax;
+	  N_Vector u;
+	  UserData data;
+	  void *cvode_mem;
+	  int iout, flag;
+	  long int nst;
+
+
+	/*assign stack and static/global variables */ 
+	mainFile = NULL; //main file for the program. using C functions to abstract OS functions. buffering is nice too...
+
 	/* Non portable area  */ 
 	numOfCores = sysconf( _SC_NPROCESSORS_ONLN );  //getting number of cpus
 	pid = getpid(); //getting the pid of creal	
-	//~ outputFP = NULL; //this is to actually write the file
+
 	/* End of Non portable area  */
 	
 	/* main processing area */ 
